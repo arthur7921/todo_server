@@ -27,4 +27,4 @@ class TaskViewSet(mixins.ListModelMixin, mixins.CreateModelMixin, mixins.UpdateM
 
 class UserTag(APIView):
     def get(self, request):
-        return Response(Task.objects.all().aggregate(Max('userTag')))
+        return Response(Task.objects.all().aggregate(Max('userTag')) + 1)
